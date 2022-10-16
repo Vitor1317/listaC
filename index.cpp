@@ -140,41 +140,52 @@ void exercicio12(){
 
 }
 
-//INCOMPLETO
 void exercicio13(){
-    int i, nInputs, idade, accF, accM;
-    float mediaF, mediaM;
-    char sexo[1];
+    int i, nInputs, idade, nMale, nFemale;
+    char sexo[2];
+    float mediaM, mediaF;
 
-    printf("Digite a quantidade de pessoas: ");
+    printf("Defina o numero de pessoas: ");
     scanf("%i", &nInputs);
 
-    accM = 0;
-    accF = 0;
+    nMale = 0;
+    nFemale = 0;
+    mediaM = 0;
+    mediaF = 0;
 
     for (i = 1; i <= nInputs; i++){
-        printf("Digite o sexo (M/F):");
+        printf("Defina o genero (M/F): ");
         scanf("%s", sexo);
-        printf("Digite a idade: ");
+
+        printf("Digite um numero: ");
         scanf("%i", &idade);
 
-        
-        if(strcmp(sexo, "M") || strcmp(sexo, "m") ){
-            accM = accM + idade;
-        }else if(strcmp(sexo, "F") || strcmp(sexo, "f")){
-            accF = accF + idade;
-        }else{
-            printf("Formato Invalido \n");
+        if(strcmp(sexo, "M") == 0 || strcmp(sexo, "m") == 0){
+            nMale+=1;
+            mediaM = mediaM + idade;
+        }
+
+        if(strcmp(sexo, "F") == 0 || strcmp(sexo, "f") == 0){
+            nFemale+=1;
+            mediaF = mediaF + idade;
         }
     }
 
-    mediaF = accF /nInputs;
-    mediaM = accM /nInputs;
+    if(nFemale == 0){
+        nFemale = 1;
+        printf("Nenhuma aluna do sexo feminino foi informada \n");
+    }
 
-    printf("A media de idade feminina é: %f \n", mediaF);
+    if(nMale == 0){
+        nMale = 1;
+        printf("Nenhuma aluna do sexo feminino foi informada \n");
+    }
+
+    mediaM = mediaM/nMale;
+    mediaF = mediaF/nFemale;
+
     printf("A media de idade masculina é: %f \n", mediaM);
-
-   
+    printf("A media de idade femenina é: %f \n", mediaF);
 }
 
 void exercicio14(){
@@ -204,6 +215,55 @@ void exercicio14(){
     printf("O menor número é: %f", menor);
 }
 
+void exercicio15(){
+    int i, count = 1, age, maxAge, minAge, nMore18, nUntil18, acc = 0;
+    float alunos = 0;
+    char options[2];
+
+    for(i = 0; i <=count; i++){
+        printf("Digite a idade do aluno: ");
+        scanf("%i", &age);
+
+        acc = acc + age;
+        
+        printf("Deseja informar a idade de mais um aluno? (s/n) ");
+        scanf("%s", options);
+
+        if(i == 0){
+            maxAge = 0;
+            minAge = age;
+            nMore18 = 0;
+            nUntil18 = 0;
+        }
+
+
+        if(strcmp(options, "s") == 0){
+            count++;
+        }else {
+            count--;
+        }
+
+        if(age > maxAge){
+            maxAge = age;
+        }   
+
+        if(age < minAge){
+            minAge = age;
+        }
+
+        age > 18 ? nMore18++ : nUntil18++;
+        alunos ++;
+    }
+
+    alunos = acc/alunos;
+
+    printf("\n O aluno mais velho tem %i anos", maxAge);
+    printf("\n O aluno mais novo tem %i anos", minAge);
+    printf("\n A quantidade de alunos maiores de 18 anos e: %i", nMore18);
+    printf("\n A quantidade de alunos que tem ate 18 anos e: %i", nMore18);
+    printf("\n A media de idade dos alunos é: %f", alunos);
+}
+
 int main(){
     // exercicio1();
     // exercicio2();
@@ -218,5 +278,6 @@ int main(){
     // exercicio11();
     // exercicio12();
     // exercicio13();
-    exercicio14();
+    // exercicio14();
+    exercicio15();
 }
