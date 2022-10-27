@@ -5,7 +5,7 @@
 
 ### Resulução
 
-```
+
 ~~~~c++
 void exercicio1(){
     int i;
@@ -15,7 +15,6 @@ void exercicio1(){
     }
 }
 ~~~~
-```
 
 ## Exercício 2
 * Elabore um algoritmo que imprima na tela o texto "Hello World!" 10 vezes, um por linha.
