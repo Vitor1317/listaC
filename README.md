@@ -6,6 +6,7 @@
 ### Resulução
 
 ```
+~~~~c++
 void exercicio1(){
     int i;
 
@@ -13,6 +14,7 @@ void exercicio1(){
         printf("Hello World pela %i° vez", i);
     }
 }
+~~~~
 ```
 
 ## Exercício 2
