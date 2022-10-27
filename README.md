@@ -3,6 +3,17 @@
 ## Exercício 1
 * Elabore um algoritmo que imprima na tela lado a lado o texto "Hello World!" 10 vezes. 
 
+### Resulução
+
+```
+void exercicio1(){
+    int i;
+
+    for (i = 1; i <= 10; i++){
+        printf("Hello World pela %i° vez", i);
+    }
+}
+```
 
 ## Exercício 2
 * Elabore um algoritmo que imprima na tela o texto "Hello World!" 10 vezes, um por linha.
