@@ -1,5 +1,7 @@
 # Lista de exercícios de C++
 
+![BilgiYazan-Cpp-Eğitimi](https://user-images.githubusercontent.com/83735304/198164254-af3af192-8539-4090-b0a5-754098456c0e.jpg)
+
 ## Exercício 1
 * Elabore um algoritmo que imprima na tela lado a lado o texto "Hello World!" 10 vezes. 
 
